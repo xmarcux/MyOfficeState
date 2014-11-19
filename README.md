@@ -1,6 +1,5 @@
-MyOfficeState
-=============   
 ![mos](img/MyOfficeState_300X69.gif)  
+====================================
    
 My Office State is a software for keeping track of your colleagues and/or friends state.   
 Can I disturb?   
