@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Common.Inet.Parse</title><link href="ocean.css" rel="stylesheet" type="text/css" title="Ocean" /><script src="haddock-util.js" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+window.onload = function () {pageLoad();setSynopsis("mini_Common-Inet-Parse.html");};
+//]]>
+</script></head><body><div id="package-header"><ul class="links" id="page-menu"><li><a href="index.html">Contents</a></li><li><a href="doc-index.html">Index</a></li></ul><p class="caption empty">&nbsp;</p></div><div id="content"><div id="module-header"><table class="info"><tr><th>Portability</th><td>Portable</td></tr><tr><th>Stability</th><td>Stable</td></tr><tr><th>Maintainer</th><td>marcux@marcux.org</td></tr><tr><th>Safe Haskell</th><td>Safe-Infered</td></tr></table><p class="caption">Common.Inet.Parse</p></div><div id="description"><p class="caption">Description</p><div class="doc"><p>Version     : v1.0.0
+</p><p>This module parse String streams sent between server (moses)
+and client (mos). Streams are built up with simple xml format.
+</p></div></div><div id="synopsis"><p id="control.syn" class="caption expander" onclick="toggleSection('syn')">Synopsis</p><ul id="section.syn" class="hide" onclick="toggleSection('syn')"><li class="src short"><a href="#v:userToXml">userToXml</a> :: <a href="Common-Data.html#t:User">User</a> -&gt; String</li><li class="src short"><a href="#v:xmlToMaybeUser">xmlToMaybeUser</a> :: String -&gt; Maybe <a href="Common-Data.html#t:User">User</a></li><li class="src short"><a href="#v:strBetweenTags">strBetweenTags</a> :: String -&gt; String -&gt; String -&gt; String</li></ul></div><div id="interface"><h1>Documentation</h1><div class="top"><p class="src"><a name="v:userToXml" class="def">userToXml</a> :: <a href="Common-Data.html#t:User">User</a> -&gt; String</p><div class="doc"><p>Converts a User to an xml String.
+  The xml format is simplyfied and looks like:
+  <a href="user">user</a>
+      <a href="nickname">nickname</a>nick<a href="/nickname">/nickname</a>
+      <a href="username">username</a>user<a href="/username">/username</a>
+      <a href="profession">profession</a>engineer<a href="/profession">/profession</a>
+      <a href="location">location</a>New York<a href="/location">/location</a>
+      <a href="gender">gender</a>Male<a href="/gender">/gender</a>
+  <a href="/user">/user</a>
+</p><p>The returned string is only a single line string
+  without newlines and spaces. 
+  All tags continues after each other in one long string.
+</p></div></div><div class="top"><p class="src"><a name="v:xmlToMaybeUser" class="def">xmlToMaybeUser</a> :: String -&gt; Maybe <a href="Common-Data.html#t:User">User</a></p><div class="doc"><p>Converts an xml string to a User.
+  If xml string has wrong format Nothing is returned.
+</p></div></div><div class="top"><p class="src"><a name="v:strBetweenTags" class="def">strBetweenTags</a> :: String -&gt; String -&gt; String -&gt; String</p><div class="doc"><p>Returns the string between starting tag 
+  and ending tag. If tag does not exist 
+  or string is formated wrong the empty
+  String is returned.
+</p></div></div></div></div><div id="footer"><p>Produced by <a href="http://www.haskell.org/haddock/">Haddock</a> version 2.11.0</p></div></body></html>
